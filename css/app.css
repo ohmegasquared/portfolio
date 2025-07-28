@@ -18,9 +18,28 @@
 body {
   background: #EAE8E8;
   color: #0514D4;
-  margin: 4em 10em;
+  padding: 4em 10em;
   font-family: Subjectivity, Gill Sans, sans-serif;
-  z-index: 0;
+  position: relative;
+}
+
+/*bg boxes*/
+body::before,
+body::after  {
+    content: "";
+    height: calc(100% - 3em);
+    width: calc(100% - 3em);
+    min-height: calc(100vh - 3em);
+    min-width: calc(100vw - 3em);
+    top: 1em;
+    left: 1em;
+    border: 1px solid #0514D4;
+    position: absolute;
+}
+
+body::after {
+  top: 2em;
+  left: 2em;
 }
 
 a {
@@ -39,46 +58,17 @@ hr {
   background-color: #0514D4;
 }
 
-/*bg boxes*/
-.box::before {
-    content: "";
-    width: 96%;
-    height: 94%;
-    top: 1em;
-    left: 1em;
-    border: 1px solid #0514D4;
-    position: absolute;
-    z-index; -1;
-}
-
-.box2::before {
-    content: "";
-    width: 96%;
-    height: 94%;
-    top: 2em;
-    left: 2em;
-    border: 1px solid #0514D4;
-    position: absolute;
-    z-index; -1;
-}
-
 .logos {
-  display: flex;
-  flex-direction: row;
   width: 100%;
-  height: 50px;
-  align-items: center;
-  justify-content: space-around;
-  align-content: space-evenly;
-  flex-wrap: wrap;
-
   margin: 1em;
+  justify-content: center;
 }
 
-.logos > * {
+.logos > .cell {
   border: 2px solid rgb(96 139 168);
-  flex-shrink: 1;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .logo-lyft, .logo-toast, .logo-compiler, .logo-zipcar, .logo-numina {
