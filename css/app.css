@@ -2,13 +2,11 @@
   font-family: Subjectivity;
   src: url(Subjectivity-Regular.woff);
 }
-
 @font-face {
   font-family: Subjectivity;
   src: url(Subjectivity-Bold.woff);
   font-weight: bold;
 }
-
 @font-face {
   font-family: Subjectivity;
   src: url(Subjectivity-ExtraBold.woff);
@@ -18,9 +16,20 @@
 body {
   background: #EAE8E8;
   color: #0514D4;
-  padding: 4em 10em;
+  padding: 6em 8em;
   font-family: Subjectivity, Gill Sans, sans-serif;
   position: relative;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 767px) {
+  body {
+    padding: 4em 3em;
+  }
+}
+@media screen and (max-width: 400px) {
+  body {
+    padding: 4em 2em;
+  }
 }
 
 /*bg boxes*/
@@ -35,11 +44,18 @@ body::after  {
     left: 1em;
     border: 1px solid #0514D4;
     position: absolute;
+    z-index: -1;
 }
 
 body::after {
   top: 2em;
   left: 2em;
+}
+
+footer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
 }
 
 a {
@@ -51,6 +67,7 @@ h2 {
   font-size: 3em;
   font-family: Subjectivity;
   font-weight: 900;
+  line-height: 1.2;
 }
 
 hr {
@@ -58,27 +75,138 @@ hr {
   background-color: #0514D4;
 }
 
+/*co logos*/
 .logos {
   width: 100%;
-  margin: 1em;
-  justify-content: center;
+  margin: 2em 0;
+  justify-content: space-between; //center
 }
-
 .logos > .cell {
-  border: 2px solid rgb(96 139 168);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1em 0;
 }
-
 .logo-lyft, .logo-toast, .logo-compiler, .logo-zipcar, .logo-numina {
   transition: fill 0.3s ease;
 }
-
+/*colors on hover*/
 .logo-lyft:hover {
   fill: #EA0A8C;
 }
-
 .logo-toast:hover { /*fix*/
   fill: #FF4C00;
+}
+
+/* work teasers*/
+#global-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75vw;
+  height: 75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  filter: blur(80px);
+  z-index: 0;
+  transform: translate(-10%, -10%);
+}
+
+.grid, .grid-container {
+  position: relative;
+}
+
+.grid-x .work {
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.work .card {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.work .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+@media screen and (max-width: 767px) {
+  .overlay-text h2 {
+    color: #0514D4;
+    font-size: 2em;
+  }
+  .overlay-text p {
+    color: #0514D4;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    position: relative;
+  }
+  .overlay-text {
+    position: static;
+    opacity: 1 !important;
+    padding: 1rem 0;
+    text-align: left;
+  }
+  .card img {
+    opacity: 1 !important;
+  }
+  #global-bg {
+    display: none !important;
+  }
+}
+
+
+.work .card:hover img {
+  opacity: 0;
+  z-index: -2;
+}
+
+.work .card:hover .overlay-text {
+  opacity: 1;
+}
+
+#grain-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay; /* or soft-light, screen, multiply */
+  opacity: 0.8; /* Adjust */
+}
+
+/*spacer*/
+.spacer3 {
+  height: 3em;
 }
