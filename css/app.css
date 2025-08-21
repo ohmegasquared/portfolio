@@ -40,7 +40,7 @@ body::after  {
     width: calc(100% - 3em);
     min-height: calc(100vh - 3em);
     min-width: calc(100vw - 3em);
-    top: 1em;
+    top: 2em;
     left: 1em;
     border: 1px solid #0514D4;
     position: absolute;
@@ -48,7 +48,7 @@ body::after  {
 }
 
 body::after {
-  top: 2em;
+  top: 1em;
   left: 2em;
 }
 
