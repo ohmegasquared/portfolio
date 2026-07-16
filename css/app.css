@@ -14,9 +14,9 @@
 }
 
 body {
-  background: #EAE8E8;
-  color: #0514D4;
-  padding: 6em 8em;
+  background: #121212;
+  color: #FFFFFF;
+  padding: 4em 8em; /*6em 8em*/
   font-family: Subjectivity, Gill Sans, sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -33,6 +33,7 @@ body {
 }
 
 /*bg boxes*/
+/*
 body::before,
 body::after  {
     content: "";
@@ -42,7 +43,7 @@ body::after  {
     min-width: calc(100vw - 3em);
     top: 2em;
     left: 1em;
-    border: 1px solid #0514D4;
+    border: 1px solid #BBBFED;
     position: absolute;
     z-index: -1;
 }
@@ -51,6 +52,7 @@ body::after {
   top: 1em;
   left: 2em;
 }
+*/
 
 footer {
   margin-left: auto;
@@ -58,7 +60,7 @@ footer {
   max-width: 75rem;
 }
 
-a { text-decoration: underline; color: #0514D4; }
+a { text-decoration: underline; color: #0099FF; }
 
 h2 {
   font-size: 3em;
@@ -68,8 +70,11 @@ h2 {
 }
 
 hr {
-  height: 1px;
-  background-color: #0514D4;
+  height: .5px;
+  background-color: #fff;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  width: calc(100% + 3rem);
 }
 
 .logo-ticker {
