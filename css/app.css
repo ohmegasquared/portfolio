@@ -1,23 +1,30 @@
 @font-face {
-  font-family: Subjectivity;
-  src: url(Subjectivity-Regular.woff);
+  font-family: "Subjectivity";
+  src: url(../font/Subjectivity-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: Subjectivity;
-  src: url(Subjectivity-Bold.woff);
-  font-weight: bold;
+  font-family: "Subjectivity";
+  src: url(../font/Subjectivity-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: Subjectivity;
-  src: url(Subjectivity-ExtraBold.woff);
+  font-family: "Subjectivity";
+  src: url(../font/Subjectivity-ExtraBold.woff) format("woff");
   font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  background: #121212;
-  color: #FFFFFF;
-  padding: 4em 8em; /*6em 8em*/
-  font-family: Subjectivity, Gill Sans, sans-serif;
+  background: #EAE8E8;
+  color: #0514D4;
+  padding: 6em 8em;
+  font-family: "Subjectivity", Gill Sans, sans-serif;
   position: relative;
   overflow-x: hidden;
 }
@@ -33,26 +40,25 @@ body {
 }
 
 /*bg boxes*/
-/*
 body::before,
-body::after  {
-    content: "";
-    height: calc(100% - 3em);
-    width: calc(100% - 3em);
-    min-height: calc(100vh - 3em);
-    min-width: calc(100vw - 3em);
-    top: 2em;
-    left: 1em;
-    border: 1px solid #BBBFED;
-    position: absolute;
-    z-index: -1;
+body::after {
+  content: "";
+  height: calc(100% - 3em);
+  width: calc(100% - 3em);
+  min-height: calc(100vh - 3em);
+  min-width: calc(100vw - 3em);
+  top: 2em;
+  left: 1em;
+  border: 1px solid #0514D4;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
 }
 
 body::after {
   top: 1em;
   left: 2em;
 }
-*/
 
 footer {
   margin-left: auto;
@@ -60,21 +66,22 @@ footer {
   max-width: 75rem;
 }
 
-a { text-decoration: underline; color: #0099FF; }
+a { text-decoration: underline; color: #0514D4; }
 
 h2 {
   font-size: 3em;
-  font-family: Subjectivity;
+  font-family: "Subjectivity", Gill Sans, sans-serif;
   font-weight: 900;
   line-height: 1.2;
 }
 
 hr {
-  height: .5px;
-  background-color: #fff;
+  height: 1px;
+  background-color: #0514D4;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
   width: calc(100% + 3rem);
+  border: none;
 }
 
 .logo-ticker {
@@ -246,6 +253,8 @@ hr {
   height: auto;
   display: block;
   transition: opacity 0.3s ease;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
 }
 
 .overlay-text {
@@ -264,6 +273,21 @@ hr {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
+}
+
+.overlay-text p {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text h2 {
+  font-family: "Subjectivity", Gill Sans, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.15;
+  color: #fff;
 }
 @media screen and (max-width: 767px) {
   .overlay-text h2 {
@@ -293,8 +317,8 @@ hr {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  mix-blend-mode: overlay; /* or soft-light, screen, multiply */
-  opacity: 0.8; /* Adjust */
+  mix-blend-mode: overlay;
+  opacity: 0.35;
 }
 
 /*spacer*/
